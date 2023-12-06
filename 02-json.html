@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <h1>JSON</h1>
+    <ul x-data="{
+        async données() {
+            const resp = await fetch('Data.json') 
+            return await resp.json();
+        },
+    }">
+       <template x-for="obj in données">
+        <li>
+            <span x-text="obj.nom">nom</span>
+            <a x-text="obj.projet" :href="obj.url">url</a>
+        </li>
+    </ul>
+</body>
+</html>
