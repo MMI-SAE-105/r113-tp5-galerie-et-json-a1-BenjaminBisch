@@ -63,7 +63,11 @@ illo in neque iste non rem reiciendis beatae
 accusantium amet totam aspernatur.</p>
 
 <div class="overlay" x-show="Montreroverlay" @click="Montreroverlay = null">
-    <figure><img x-bind="https://picsum.photos/id/237/400/300" alt="image 237... un chiot"></figure>
+    <figure>
+        <img src="https://picsum.photos/id/237/400/300" alt="image 237">
+    </figure>
 </div>
+
+<button @click="Montreroverlay = 'https://picsum.photos/id/237/400/300'">Afficher l'overlay</button>
 </body>
 </html>
