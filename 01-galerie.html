@@ -53,7 +53,7 @@
 </style>
 
 </head>
-<body>
+<body x-data="{ Montreroverlay: null }">
     <h1>Galerie</h1>
 
 <p>Lorem ipsum dolor sit amet consectetur 
@@ -62,8 +62,8 @@ provident dolore modi temporibus blanditiis omnis
 illo in neque iste non rem reiciendis beatae
 accusantium amet totam aspernatur.</p>
 
-<div class="overlay">
-    <figure><img src="https://picsum.photos/id/237/400/300" alt="image 237... un chiot"></figure>
+<div class="overlay" x-show="Montreroverlay" @click="Montreroverlay = null">
+    <figure><img x-bind="https://picsum.photos/id/237/400/300" alt="image 237... un chiot"></figure>
 </div>
 </body>
 </html>
