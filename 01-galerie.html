@@ -50,10 +50,22 @@
     height: auto; /* Height auto for keeping the ratio */
 }
 
+.thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            border: 2px solid white;
+            max-width: 100px;
+        }
+
 </style>
 
 </head>
-<body x-data="{ Montreroverlay: null }">
+<body x-data="{ Montreroverlay: null, imageEnGrand: 'https://picsum.photos/id/237/400/300' }">
     <h1>Galerie</h1>
 
 <p>Lorem ipsum dolor sit amet consectetur 
@@ -64,10 +76,15 @@ accusantium amet totam aspernatur.</p>
 
 <div class="overlay" x-show="Montreroverlay" @click="Montreroverlay = null">
     <figure>
-        <img src="https://picsum.photos/id/237/400/300" alt="image 237">
+        <img x-bind:src="imageEnGrand" alt="image en grand">
     </figure>
 </div>
 
-<button @click="Montreroverlay = 'https://picsum.photos/id/237/400/300'">Afficher l'overlay</button>
+<div class="thumbnails">
+    <div class="thumbnail" @click="imageEnGrand = 'https://picsum.photos/id/237/400/300'">
+        <img src="https://picsum.photos/id/237/100/70" alt="Miniature 1">
+    </div>
+
+<button @click="Montreroverlay = imageEnGrand">Afficher l'overlay</button>
 </body>
 </html>
