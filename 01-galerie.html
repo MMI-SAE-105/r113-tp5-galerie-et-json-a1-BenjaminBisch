@@ -77,21 +77,6 @@
             line-height: 1.6;
         }
 
-        button {
-            padding: 10px 20px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
         .thumbnails {
             display: flex;
             gap: 10px;
@@ -101,7 +86,7 @@
 </style>
 
 </head>
-<body x-data="{ Montreroverlay: null, imageEnGrand: 'https://picsum.photos/id/237/400/300' }">
+<body x-data="{ Montreroverlay: null, }">
     <h1>Galerie</h1>
 
 <p>Lorem ipsum dolor sit amet consectetur 
@@ -110,17 +95,16 @@ provident dolore modi temporibus blanditiis omnis
 illo in neque iste non rem reiciendis beatae
 accusantium amet totam aspernatur.</p>
 
-<div class="overlay" x-show="Montreroverlay" @click="Montreroverlay = null">
+<div class="overlay" x-show="Montreroverlay" @click="Montreroverlay = null" @keyup.escape.window="Montreroverlay = null">
     <figure>
-        <img x-bind:src="imageEnGrand" alt="image en grand">
+        <img x-bind:src="Montreroverlay" alt="image en grand">
     </figure>
 </div>
 
 <div class="thumbnails">
-    <div class="thumbnail" @click="imageEnGrand = 'https://picsum.photos/id/237/400/300'">
-        <img src="https://picsum.photos/id/237/100/70" alt="Miniature 1">
-    </div>
+        <img src="https://picsum.photos/id/237/100/70" alt="Miniature 1"
+        @click="Montreroverlay = 'https://picsum.photos/id/237/400/300'">
 
-<button @click="Montreroverlay = imageEnGrand">Afficher l'overlay</button>
+
 </body>
 </html>
