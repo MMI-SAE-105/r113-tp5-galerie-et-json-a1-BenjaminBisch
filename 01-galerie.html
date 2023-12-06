@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .vrac {
+"X" #000 #fff #fff 2px solid 0 0 0 0 0 100% 100% 100% 1rem 1rem 1rem 2px
+solid #fff 2rem 2rem 2rem 50% absolute auto background-color background-color
+block border border border-radius bottom center center color content cursor
+display display fixed font-family grid height height height left line-height 
+margin max-width padding place-content pointer position position
+rgba(0,0,0,0.9) right right sans-serif text-align top top width width
+}
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 100vw; /* Full width (cover the whole page) */
+    height: 100vh; /* Full height (cover the whole page) */
+    top: 0; /* Stay at the top */
+    left: 0; /* Stay at the left */
+    right: 0; /* Stay at the right */
+    bottom: 0; /* Stay at the bottom */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    cursor: pointer; /* Add a pointer on hover */
+    display: grid; /* Use a grid for easy centering */
+    place-items: center; /* Center vertically and horizontally */
+}
+
+.overlay::after {
+    content: "X"; /* Add content: "X" */
+    color: white; /* White text color */
+    background-color: black; /* Black background color */
+    font-family: sans-serif; /* Font family "sans-serif" */
+    text-align: center; /* Centered text */
+    line-height: 2rem; /* Line height (idem height) */
+    display: block; /* Display as a block */
+    position: absolute; /* Position absolute */
+    top: 1rem; /* 1rem from the top */
+    right: 1rem; /* 1rem from the right */
+    width: 2rem; /* 2rem width */
+    height: 2rem; /* 2rem height */
+    border: 2px solid white; /* White border of 2px */
+    border-radius: 50%; /* Rounded border */
+}
+
+.overlay > figure {
+    margin: 0; /* No margin */
+    padding: 1rem; /* 1rem padding */
+    border: 2px solid white; /* White border of 2px */
+}
+
+.overlay > figure > img {
+    max-width: 100%; /* Max width 100% for responsive image */
+    height: auto; /* Height auto for keeping the ratio */
+}
+
+</style>
+
+</head>
+<body>
+    <h1>Galerie</h1>
+
+<p>Lorem ipsum dolor sit amet consectetur 
+adipisicing elit. Est officia ducimus quasi,
+provident dolore modi temporibus blanditiis omnis
+illo in neque iste non rem reiciendis beatae
+accusantium amet totam aspernatur.</p>
+
+<div class="overlay">
+    <figure><img src="https://picsum.photos/id/237/400/300" alt="image 237... un chiot"></figure>
+</div>
+</body>
+</html>
